@@ -1716,13 +1716,15 @@
                 right: -120%;
                 width: 100%;
                 height: 100vh;
-                background: rgba(242, 247, 249, .98);
+                background: var(--cream);
+                /* Changed from rgba to solid color */
                 backdrop-filter: blur(30px);
                 -webkit-backdrop-filter: blur(30px);
                 flex-direction: column;
                 padding: 110px 32px 40px;
                 transition: right .45s var(--ease);
                 overflow-y: auto;
+                /* This is crucial for scrolling */
                 align-items: flex-start;
                 gap: 6px;
                 z-index: 999;
@@ -1760,7 +1762,6 @@
                 display: none;
             }
 
-            /* Animated collapsible dropdowns on mobile */
             .dropdown-menu,
             .mega-menu {
                 position: static !important;
@@ -1777,29 +1778,36 @@
                 display: block !important;
                 min-width: auto !important;
                 width: 100% !important;
-                background: transparent !important;
+                background: var(--paper-2) !important;
+                /* ADDED: Solid background for the dropdown itself */
                 backdrop-filter: none !important;
                 top: auto !important;
                 left: auto !important;
-                border-radius: 0;
+                border-radius: var(--r-md);
+                /* Added border radius for mobile view */
                 max-width: 100%;
-                margin-left: 8px;
+                margin-left: 0;
             }
 
             .nav-item.open .dropdown-menu,
             .nav-item.open .mega-menu {
-                max-height: 1200px;
-                padding: 4px 0 4px 18px !important;
-                overflow: visible;
+                max-height: 600px !important;
+                /* Large enough to show a good chunk of the list */
+                overflow-y: auto !important;
+                /* Allows scrolling the ports if they exceed screen height */
+                padding: 8px 0 8px 18px !important;
+                margin-bottom: 10px;
             }
 
             .dropdown-menu a,
             .mega-group a {
                 color: var(--ink-soft) !important;
-                padding: 10px 12px !important;
-                margin: 2px 0 !important;
-                font-size: .76rem !important;
-                border-bottom: 1px solid rgba(10, 31, 68, .05) !important;
+                padding: 12px 14px !important;
+                margin: 0 !important;
+                font-size: .82rem !important;
+                border-bottom: 1px solid rgba(10, 31, 68, .06) !important;
+                background: var(--paper) !important;
+                /* Adds contrast to each link */
             }
 
             .dropdown-menu a:hover,
@@ -2028,7 +2036,7 @@
                         </div>
                     </div>
                     <div class="hero-right">
-                        <img src="./assets/imgs/port-hero.jpg" alt="Port of London, United Kingdom">
+                        <img src="./assets/imgs/a-ship-dark-theme.jpg" alt="Port of London, United Kingdom">
                         <div class="hero-badge">
                             <i class="fas fa-ship"></i>
                             <div>
